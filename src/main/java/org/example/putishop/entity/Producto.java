@@ -1,26 +1,35 @@
 package org.example.putishop.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.*;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
 
 @Data
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "Producto")
-public class Producto
-{
+@Entity
+@Table(name = "PRODUCTOS")
+public class Producto {
     @Id
-    private String id;
-    @Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "CODIGO_PRODUCTO", unique = true, nullable = false)
+    private String codigoProducto;
+
+    @Column(name = "CATEGORIA_PRODUCTO")
+    private String categoria;
+
+    @Column(name = "NOMBRE_PRODUCTO")
     private String nombre;
-    @Column(nullable = false)
-    private String descripcion;
-    @Column(nullable = false)
-    private Integer precio;
-    @Column(nullable = false)
+
     private Integer stock;
+
+    @Column(precision = 10, scale = 2)
+    private BigDecimal precio;
+
+    @Column(nullable = false)
+    private boolean estado;
 }

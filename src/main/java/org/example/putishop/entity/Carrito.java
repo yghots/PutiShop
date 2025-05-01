@@ -1,6 +1,7 @@
 package org.example.putishop.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Data
 // Entidad Carrito
 @Entity
 @Table(name = "CARRITO")

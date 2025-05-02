@@ -16,7 +16,7 @@ import java.util.List;
 public class DetalleVentaServiceImpl implements DetalleVentaService {
     private final DetalleVentaRepository detalleVentaRepository;
     private final DetalleVentaMapper detalleVentaMapper;
-    private final DetalleVentaService detalleVentaService;
+
 
     @Override
     public List<DetalleVentaResponseDTO> listarDetalleVentas(){
